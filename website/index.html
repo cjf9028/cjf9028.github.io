@@ -1,0 +1,31 @@
+---
+layout: default
+hello_text: "Hello there!"
+show_footer: false
+fruit:
+  - name: 조경철
+    email: cjf9028@daum.net
+    age: 25
+
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Sample 1</title>
+  </head>
+  <body>
+    <br><br><br>
+    <h1>Hello World</h1>
+    <p>{{ page.hello_text }}</p>
+
+    <ul>
+      {% for item in page.fruit %}
+        <li>{{ item.name }}, <br> E-mail: {{ item.email }} <br> age : {{ item.age }}</li>
+      {% endfor %}
+    </ul>
+
+    {% if page.show_footer %}
+      <footer>I am a footer</footer>
+    {% endif %}
+  </body>
+</html>
